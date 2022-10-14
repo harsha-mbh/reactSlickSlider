@@ -8,19 +8,18 @@ import 'slick-carousel/slick/slick-theme.css'
 const PlanetsSlider = props => {
   const {planetsList} = props
   const settings = {
+    className: 'slider-container',
     dots: true,
-    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
   }
   return (
     <div className="app-container" testid="planets">
+      <h1 className="heading">PLANETS</h1>
       <Slider {...settings}>
-        <ul className="planet-details-container">
-          {planetsList.map(eachPlanet => (
-            <PlanetItem key={eachPlanet.id} planetDetails={eachPlanet} />
-          ))}
-        </ul>
+        {planetsList.map(eachPlanet => (
+          <PlanetItem key={eachPlanet.id} planetDetails={eachPlanet} />
+        ))}
       </Slider>
     </div>
   )
